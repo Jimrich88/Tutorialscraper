@@ -11,11 +11,10 @@ print html
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 tds = root.cssselect("td")
-record = {"cell" : td.text}
+record = {"td" : td.text, "index" : indexno}
 print record 
 scraperwiki.sqlite.save(["cell"], record)
 indexno = indexno + 1
-record = {"td" : td.text, "index" : indexno}
 scraperwiki.sqlite.save(["index"], record
 #
 # # Write out to the sqlite database using scraperwiki library
