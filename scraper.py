@@ -11,7 +11,7 @@ print html
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 tds = root.cssselect("td")
-print lxml.html.tostring(td)
+print lxml.html.tostring("td")
 print td.text
 #
 # # Write out to the sqlite database using scraperwiki library
