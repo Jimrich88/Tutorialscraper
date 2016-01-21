@@ -11,8 +11,9 @@ print html
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 tds = root.cssselect("td")
-print lxml.html.tostring("td")
-print td.text
+record = {"cell" : td.text}
+print record 
+scraperwiki.sqlite.save(["cell"], record)
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
