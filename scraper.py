@@ -10,7 +10,9 @@ html=scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sitta
 print html 
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-print tds = root.cssselect("td")
+tds = root.cssselect("td")
+print lxml.html.tostring(td)
+print td.text
 #
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
